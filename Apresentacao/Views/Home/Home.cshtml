@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<form id="formImport" disablevalidator name="FormModalBulkLoad" enctype="multipart/form-data" action="@Url.Action("Home", "Home")" method="post">
+    <div class="well">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="FILE" class="control-label">Nome:</label>
+                    <input type="text" data-path="" maxlength="250" name="Nome" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="FILE" class="control-label">E-mail</label>
+                    <input type="text" data-path="" maxlength="250" name="Email" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" class="form-control" value="Enviar" />
+</form>
+
