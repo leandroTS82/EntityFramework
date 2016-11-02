@@ -4,10 +4,11 @@ using System.Linq.Expressions;
 using Data.Entity;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.Collections.Generic;
 
 namespace Data
 {
-    public class AbstractData<T> : IBaseCrudData<T> where T : class
+    public class AbstractData<T> where T : class
     {        
 
         internal DataEntity context;
@@ -24,24 +25,37 @@ namespace Data
             
         }
 
-        public IQueryable<T> buscar(Expression<Func<T, bool>> where)
+        public void buscar(Expression<Func<T, bool>> where)
         {
-            throw new NotImplementedException();
+            var db = dbSet.ToList();
         }
 
-        public IQueryable<T> buscarTodos()
+        public List<T> buscarTodos()
         {
+            List<T> dbList = dbSet.ToList();
+            return dbList;
+        }
+
+        public IQueryable<T> buscarTodos(T pEntity)
+        {
+            
             throw new NotImplementedException();
         }
 
         public void deletar(T pEntity)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(pEntity);
+            SaveChange();
         }
 
         public void inserir(T pEntity)
         {
             dbSet.Add(pEntity);
+            SaveChange();            
+        }
+
+        public void SaveChange()
+        {
             try
             {
                 context.SaveChanges();
@@ -60,11 +74,6 @@ namespace Data
                 }
                 throw;
             }
-        }
-
-        public void SaveChange()
-        {
-            throw new NotImplementedException();
         }
     }
 }

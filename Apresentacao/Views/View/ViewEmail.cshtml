@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Lista de  Emails";
+}
+
+<h2>ViewEmail</h2>
+
+<table class="table-striped">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>E-mail</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var email in @ViewBag.listaEmails)
+        {
+            <tr>
+                <td>@email.Nome</td>
+                <td>@email.Email</td>
+            </tr>
+        }
+    </tbody>   
+    
+</table>
+

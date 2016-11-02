@@ -26,7 +26,7 @@ namespace Apresentacao.Controllers
             AbstractData<Emails> data = new AbstractData<Emails>(context);
             data.inserir(emails);
 
-            return View();
+            return RedirectToAction("ViewEmail", "View");
         }
     }
 }

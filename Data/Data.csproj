@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="AbstractData.cs" />
     <Compile Include="Context\DataContext.cs" />
-    <Compile Include="Interface\IBaseCrudData.cs" />
     <Compile Include="Migrations\201610270021386_Inicial.cs" />
     <Compile Include="Migrations\201610270021386_Inicial.Designer.cs">
       <DependentUpon>201610270021386_Inicial.cs</DependentUpon>
@@ -65,9 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Interface\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610270021386_Inicial.resx">
