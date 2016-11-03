@@ -10,17 +10,25 @@
         <tr>
             <td>Nome</td>
             <td>E-mail</td>
+            <td></td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
         @foreach (var email in @ViewBag.listaEmails)
-        {
+            {
             <tr>
                 <td>@email.Nome</td>
                 <td>@email.Email</td>
+                <td>
+                    <div class="btn" onclick="window.location='@Url.Action("BuscaID", new { ID = email.Id })'" value="BuscaID">Update</div>
+                </td>
+                <td>
+                    <div class="btn" onclick="window.location='@Url.Action("Delete", new { ID = email.Id })'" value="Delete">Delete</div>
+                </td>
             </tr>
         }
-    </tbody>   
-    
+    </tbody>
+
 </table>
 

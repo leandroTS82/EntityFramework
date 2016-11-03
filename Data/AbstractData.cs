@@ -21,30 +21,35 @@ namespace Data
         }
         public void atualizar(T pEntity)
         { 
-            throw new NotImplementedException();
-            
+            //dbSet            
         }
 
         public void buscar(Expression<Func<T, bool>> where)
         {
             var db = dbSet.ToList();
         }
+        public T buscar(int id)
+        {
+            var item = dbSet.Find(id);
+            return item;
+        }
 
-        public List<T> buscarTodos()
+        public List<T> buscar()
         {
             List<T> dbList = dbSet.ToList();
             return dbList;
         }
-
-        public IQueryable<T> buscarTodos(T pEntity)
-        {
-            
-            throw new NotImplementedException();
-        }
+ 
 
         public void deletar(T pEntity)
         {
             dbSet.Remove(pEntity);
+            SaveChange();
+        }
+        public void deletar(int id)
+        {
+            var item = dbSet.Find(id);
+            dbSet.Remove(item);
             SaveChange();
         }
 
