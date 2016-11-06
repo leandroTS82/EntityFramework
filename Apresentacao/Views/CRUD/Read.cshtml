@@ -21,7 +21,7 @@
                 <td>@email.Nome</td>
                 <td>@email.Email</td>
                 <td>
-                    <div class="btn" onclick="window.location='@Url.Action("BuscaID", new { ID = email.Id })'" value="BuscaID">Update</div>
+                    <div class="btn" onclick="window.location='@Url.Action("Edit", new { ID = email.Id })'" value="Edit">Update</div>
                 </td>
                 <td>
                     <div class="btn" onclick="window.location='@Url.Action("Delete", new { ID = email.Id })'" value="Delete">Delete</div>
@@ -31,4 +31,11 @@
     </tbody>
 
 </table>
+<div>
+    <div class="btn btn-default">
+        <a href="@Url.Action("New","CRUD")">
+            Criar Novo
+        </a> 
+    </div>
+</div>
 

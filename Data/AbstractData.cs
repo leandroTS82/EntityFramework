@@ -20,8 +20,10 @@ namespace Data
             this.dbSet = context.Set<T>();
         }
         public void atualizar(T pEntity)
-        { 
-            //dbSet            
+        {
+            dbSet.Attach(pEntity);
+            context.Entry(pEntity).State = EntityState.Modified;
+            SaveChange();
         }
 
         public void buscar(Expression<Func<T, bool>> where)

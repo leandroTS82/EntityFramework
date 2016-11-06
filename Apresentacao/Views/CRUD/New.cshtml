@@ -1,11 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Create";
 }
 
-<h2>Home</h2>
+<h2>Crie novo e-mail</h2>
 
-<form id="formImport" disablevalidator name="FormModalBulkLoad" enctype="multipart/form-data" action="@Url.Action("Home", "Home")" method="post">
+<form id="formImport" disablevalidator name="FormModalBulkLoad" enctype="multipart/form-data" action="@Url.Action("Create", "CRUD")" method="post">
     <div class="well">
         <div class="row">
             <div class="col-md-6">
@@ -28,4 +28,10 @@
     </div>
     <input type="submit" class="form-control" value="Enviar" />
 </form>
-
+<div>
+    <div class="btn btn-default">
+        <a href="@Url.Action("Read","CRUD")">
+            Todos os itens
+        </a>
+    </div>
+</div>
