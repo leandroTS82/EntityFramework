@@ -12,7 +12,7 @@ namespace Apresentacao.Controllers
         public ActionResult Read()
         {
             DataEntity context = new DataEntity();
-            AbstractData<Emails> data = new AbstractData<Emails>(context);
+            EntityGeneric<Emails> data = new EntityGeneric<Emails>(context);
             ViewBag.listaEmails = data.buscar();
             return View();
         }
@@ -32,7 +32,7 @@ namespace Apresentacao.Controllers
             Emails emails = new Emails();
             emails.Nome = nome;
             emails.Email = email;
-            AbstractData<Emails> data = new AbstractData<Emails>(context);
+            EntityGeneric<Emails> data = new EntityGeneric<Emails>(context);
             data.inserir(emails);
 
             return RedirectToAction("Read");
@@ -41,7 +41,7 @@ namespace Apresentacao.Controllers
         public ActionResult Delete(string ID)
         {
             DataEntity context = new DataEntity();
-            AbstractData<Emails> data = new AbstractData<Emails>(context);
+            EntityGeneric<Emails> data = new EntityGeneric<Emails>(context);
             data.deletar(Convert.ToInt32(ID));
             return RedirectToAction("Read");
         }
@@ -49,7 +49,7 @@ namespace Apresentacao.Controllers
         public ActionResult Edit(string ID)
         {
             DataEntity context = new DataEntity();
-            AbstractData<Emails> data = new AbstractData<Emails>(context);
+            EntityGeneric<Emails> data = new EntityGeneric<Emails>(context);
             Emails email = data.buscar(Convert.ToInt32(ID));
             return View(email);
         }
@@ -57,7 +57,7 @@ namespace Apresentacao.Controllers
         public ActionResult Update(FormCollection formUpdate)
         {
             DataEntity context = new DataEntity();
-            AbstractData<Emails> data = new AbstractData<Emails>(context);
+            EntityGeneric<Emails> data = new EntityGeneric<Emails>(context);
             Emails email = new Emails();
             email.Id = Convert.ToInt32(formUpdate["Id"]);
             email.Nome = formUpdate["Nome"];

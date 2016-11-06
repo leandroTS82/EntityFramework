@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractData.cs" />
+    <Compile Include="EntityGeneric.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Migrations\201610270021386_Inicial.cs" />
     <Compile Include="Migrations\201610270021386_Inicial.Designer.cs">

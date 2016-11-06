@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace Data
 {
-    public class AbstractData<T> where T : class
+    public class EntityGeneric<T> where T : class
     {        
 
         internal DataEntity context;
         internal DbSet<T> dbSet;
 
-        public AbstractData(DataEntity context)
+        public EntityGeneric(DataEntity context)
         {
             this.context = context;
             this.dbSet = context.Set<T>();
